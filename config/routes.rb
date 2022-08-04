@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "pages#home"
-  get "users", to: "users#show"
-  get "users/:id", to: "users#showAll"
-  post "users/:id", to: "users#addInfo"
+
+  get "users", to: "users#showAll"
+  get "users/:id", to: "users#showUser"
+  post "user", to: "users#addInfo"
   put "users/:id", to: "users#update"
   delete "users/:id", to: "users#destroy"
-  get "videos/:id", to: "videos#showAll"
+
+  get "videos", to: "videos#showAll"
+  get "videos/:id", to: "videos#showVid"
   post "videos/:id", to: "videos#addInfo"
-  put "videos/:id", to: "videos#update"
+  put "video", to: "videos#update"
   delete "videos/:id", to: "videos#destroy"
 end

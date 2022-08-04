@@ -1,6 +1,10 @@
 class VideosController < ApplicationController
     skip_before_action :verify_authenticity_token
     def showAll
+        render json: Video.all
+    end
+
+    def showVid
         render json: Video.find(params[:id])
     end
 

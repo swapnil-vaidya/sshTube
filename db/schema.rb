@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_03_170324) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_04_172210) do
   create_table "users", force: :cascade do |t|
     t.string "profile_picture"
     t.string "username"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_170324) do
     t.string "upload_list"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password"
   end
 
   create_table "videos", force: :cascade do |t|
