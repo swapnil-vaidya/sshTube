@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get "videos", to: "videos#showAll"
   get "videos/:id", to: "videos#showVid"
-  post "videos/:id", to: "videos#addInfo"
-  put "video", to: "videos#update"
+  post "video", to: "videos#addInfo"
+  put "videos/:id", to: "videos#update"
   delete "videos/:id", to: "videos#destroy"
 end

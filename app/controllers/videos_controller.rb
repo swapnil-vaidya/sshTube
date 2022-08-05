@@ -9,7 +9,7 @@ class VideosController < ApplicationController
     end
 
     def addInfo
-        render json: Video.create({"url":params[:url], "likeCount":params[:likeCount], "dislikeCount":params[:dislikeCount], "comments":params[:comments], "user_id":params[:user_id],"title" = params[:title], "description" =params [:description]})
+        render json: Video.create({"url":params[:url],"likeCount":params[:likeCount],"dislikeCount":params[:dislikeCount],"comments":params[:comments],"user_id":params[:user_id],"title":params[:title],"description":params[:description]})
     end
 
     def update
@@ -21,7 +21,6 @@ class VideosController < ApplicationController
         v.user_id = params[:user_id]
         v.title = params[:title]
         v.description =params [:description]
-
         v.save
         render json: {"message":"updated"}
     end
