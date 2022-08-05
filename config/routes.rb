@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'upload', to: "resumes#new"
+  get 'uploads', to: "resumes#AllvideoData"
+  resources :resumes, only: [:index, :new, :create, :destroy]
   root "pages#home"
 
   get "users", to: "users#showAll"

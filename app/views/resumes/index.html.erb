@@ -1,0 +1,8 @@
+<div class="container">   
+<%= link_to "New File", new_resume_path %><br>
+
+<tbody>
+      <% @resumes.each do |resume| %>
+         <td><%= resume.attachment_url %></td><br>
+      <% end %>
+</div> 
