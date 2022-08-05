@@ -19,6 +19,9 @@ class VideosController < ApplicationController
         u.dislikeCount = params[:dislikeCount]
         u.comments = params[:comments]
         u.user_id = params[:user_id]
+        u.title = params[:title]
+        u.description =params [:description]
+
         u.save
         render json: {"message":"updated"}
     end
