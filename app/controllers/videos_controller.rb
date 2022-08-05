@@ -9,26 +9,26 @@ class VideosController < ApplicationController
     end
 
     def addInfo
-        render json: Video.create({"url":params[:url], "likeCount":params[:likeCount], "dislikeCount":params[:dislikeCount], "comments":params[:comments], "user_id":params[:user_id]})
+        render json: Video.create({"url":params[:url], "likeCount":params[:likeCount], "dislikeCount":params[:dislikeCount], "comments":params[:comments], "user_id":params[:user_id],"title" = params[:title], "description" =params [:description]})
     end
 
     def update
-        u = Video.find(params[:id])
-        u.url = params[:url]
-        u.likeCount = params[:likeCount]
-        u.dislikeCount = params[:dislikeCount]
-        u.comments = params[:comments]
-        u.user_id = params[:user_id]
-        u.title = params[:title]
-        u.description =params [:description]
+        v = Video.find(params[:id])
+        v.url = params[:url]
+        v.likeCount = params[:likeCount]
+        v.dislikeCount = params[:dislikeCount]
+        v.comments = params[:comments]
+        v.user_id = params[:user_id]
+        v.title = params[:title]
+        v.description =params [:description]
 
-        u.save
+        v.save
         render json: {"message":"updated"}
     end
 
     def destroy
-        u = Video.find(params[:id])
-        u.destroy
+        v = Video.find(params[:id])
+        v.destroy
         render json: {"message":"destroyed"}
     end
 end
